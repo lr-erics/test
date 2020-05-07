@@ -5,7 +5,7 @@ package allweather;
 message Instance {
   string stock_id = 1;
   int64 ts = 2;
-  repeated int64 index = 3 [packed=true];
+  repeated int32 index = 3 [packed=true];
   repeated float factor = 4 [packed=true];
   repeated int64 timestamp = 5 [packed=true];
 }

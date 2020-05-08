@@ -7,5 +7,4 @@ message Instance {
   int64 ts = 2;
   repeated uint32 index = 3 [packed=true];
   repeated float factor = 4 [packed=true];
-  repeated int64 timestamp = 5 [packed=true];
 }

@@ -4,8 +4,13 @@ namespace cpp2 hqth.trader
 namespace py hqth.trader
 namespace csharp hqth.trader
 
-
 cpp_include "<unordered_map>"
+
+enum StockType {
+NORMAL = 1,
+ST = 2,        //special treatment
+To_DELIST = 3, //未来(N天内)即将退市股票
+}
 
 enum AccountType {
 GENERAL_ACCOUNT = 1,
@@ -25,7 +30,7 @@ struct ExecuteResult {
 
 struct HoldingItem {
 1: string stock_id
-2: i32 stock_type      // 0 normal； 1 ST； 2 未来N天内待退市股票。
+2: StockType type      
 3: double market_value
 4: i32 shares
 }
@@ -57,4 +62,3 @@ struct CommanderRsp{
 service CommanderService {
 CommanderRsp execute(1: CommanderReq req) throws (1: Exception e)
 } 
-

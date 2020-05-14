@@ -40,29 +40,31 @@ struct ExecuteResult {
 }
 
 struct HoldingItem {
-1: string stock_id     //明文股票id
-2: StockType type      
-3: double market_value
-4: i32 shares
+1: string stock_id       //明文股票id
+2: StockType type        
+3: double market_value   // 总市值
+4: i32 shares            // 总持仓量
+5. map<string, i32> hoding_details;  // 策略id->持仓量
 }
 
-// 基金交易账户持仓信息
+// 策略关联交易账户的持仓信息
 struct FundAccountInfo {
-1: list<HoldingItem> items
-2: double balance
-3: AccountType type    
+1: string account_id;
+2: list<HoldingItem> items
+3: double balance
+4: AccountType type    
 }
 
 struct CommanderReq{
 1: string uuid
 2: string sender_ip
-3: map<string, SortResult> (cpp.template = "std::unordered_map") SortResults   //一个模型对应一个结果
+3: map<string, SortResult> (cpp.template = "std::unordered_map") SortResults   //策略id -> 排序结果
 }
 
 struct CommanderRsp{
 1: string uuid
 2: string responder_ip
-3: map<string, ExecuteResult> (cpp.template = "std::unordered_map") ExecuteResults   //一个模型对应一个结果
+3: map<string, ExecuteResult> (cpp.template = "std::unordered_map") ExecuteResults   //策略id -> 一组交易指令
 }
 
 

@@ -19,8 +19,14 @@ struct SortResult {
 1: list<Item> res
 }
 
+struct ExecuteItem {
+1: string stock_id  //股票id
+2: i32 shares       //预测排序
+3: bool buyInOut     //买卖方向
+}
+
 struct ExecuteResult {
-1: list<Item> res
+1: list<ExecuteItem> res
 }
 
 exception Exception {
@@ -43,7 +49,7 @@ struct CommanderReq{
 struct CommanderRsp{
 1: string uuid
 2: string responder_ip
-3: map<string, SortResult> (cpp.template = "std::unordered_map") SortResults   //一个模型对应一个结果
+3: map<string, ExecuteResult> (cpp.template = "std::unordered_map") ExecuteResults   //一个模型对应一个结果
 }
 
 service PredictorService {

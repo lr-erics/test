@@ -10,27 +10,13 @@ struct PredictorReq {
 4: i64 timestamp        //当前最新可用的因子集合的时间
 }
 
-struct Item {
-1: string stock_id  //股票id
-2: i32 rank         //预测排序
-}
-
-struct SortResult {
-1: list<Item> res
-}
-
-exception Exception {
-1: string message
-}
-
-struct PredictorRsp {
-1: string uuid
-2: string responder_id
-3: string data_version
-4: map<string, SortResult> (cpp.template = "std::unordered_map") SortResults   //一个模型对应一个结果
-}
+//struct PredictorRsp{
+//1: string uuid
+//2: string responder_id
+//3: string data_version
+//4: map<string, SortResult> (cpp.template = "std::unordered_map") SortResults   //一个模型对应一个结果
+//}
 
 service PredictorService {
 oneway void predict(1: PredictorReq req)
-}
-
+} 

@@ -23,6 +23,7 @@ struct HoldingItem {
 4: i32 shares
 }
 
+// 基金交易账户持仓信息
 struct FundAccountInfo {
 1. list<HoldingItem> items
 2. float balance

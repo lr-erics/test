@@ -27,6 +27,7 @@ struct HoldingItem {
 struct FundAccountInfo {
 1. list<HoldingItem> items
 2. float balance
+3. i32 account_type    // 0 普通账号，1 信用账号
 }
 
 exception Exception {

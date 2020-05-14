@@ -30,8 +30,8 @@ CREDIT_ACCOUNT = 2,
 
 struct ExecuteItem {
 1: string account_id   //交易账号id
-2: string stock_id     //股票id
-3: double ratio         //买入比例
+2: string stock_id     //明文股票id
+3: double ratio        //买入比例
 4: i32 buy_in_out      //买入卖出方向，0不变 -1 卖出 1 买入
 }
 

@@ -23,7 +23,7 @@ struct HoldingItem {
 4: i32 shares
 }
 
-strunct FundAccountInfo {
+struct FundAccountInfo {
 1. list<HoldingItem> items
 2. float balance
 }

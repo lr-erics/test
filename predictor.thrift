@@ -19,11 +19,15 @@ struct SortResult {
 1: list<Item> res
 }
 
+struct ExecuteResult {
+1: list<Item> res
+}
+
 exception Exception {
 1: string message
 }
 
-struct PredictorRsp{
+struct PredictorRsp {
 1: string uuid
 2: string responder_id
 3: string data_version
@@ -36,7 +40,17 @@ struct CommanderReq{
 3: map<string, SortResult> (cpp.template = "std::unordered_map") SortResults   //一个模型对应一个结果
 }
 
+struct CommanderRsp{
+1: string uuid
+2: string responder_ip
+3: map<string, SortResult> (cpp.template = "std::unordered_map") SortResults   //一个模型对应一个结果
+}
 
 service PredictorService {
 oneway void predict(1: PredictorReq req)
+}
+
+service CommanderService {
+CommanderRsp execute(1: CommanderReq req)throws (1: Exception e)
 } 
+

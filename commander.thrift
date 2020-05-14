@@ -55,7 +55,7 @@ struct FundAccountInfo {
 4: AccountType type    
 }
 
-struct StrategyHolding {
+struct StrategyObject {
 1: map<string, list<FundAccountInfo>> details; 
 }
 

@@ -40,7 +40,7 @@ struct ExecuteResult {
 }
 
 struct HoldingItem {
-1: string stock_id
+1: string stock_id     //明文股票id
 2: StockType type      
 3: double market_value
 4: i32 shares

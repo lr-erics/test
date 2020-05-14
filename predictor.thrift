@@ -22,7 +22,7 @@ struct SortResult {
 struct ExecuteItem {
 1: string stock_id  //股票id
 2: i32 shares       //预测排序
-3: bool buy_in_out  //买卖方向  0 不动 1 买入 -1 卖出
+3: i32 buy_in_out  //买卖方向  0 不动 1 买入 -1 卖出
 }
 
 struct ExecuteResult {

@@ -1,5 +1,7 @@
 namespace cpp2 hqth.trader
 namespace py hqth.trader
+namespace csharp hqth.trader
+
 
 include “predictor.thrift"
 

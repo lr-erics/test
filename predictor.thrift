@@ -20,9 +20,10 @@ struct SortResult {
 }
 
 struct ExecuteItem {
-1: string stock_id  //股票id
-2: i32 shares       //预测排序
-3: i32 buy_in_out  //买卖方向  0 不动 1 买入 -1 卖出
+1: string account_id   //交易账号id
+2: string stock_id     //股票id
+3: float ratio         //操作量
+4. i32 buy_in_out      //买入卖出方向，0不变 -1 卖出 1 买入
 }
 
 struct ExecuteResult {

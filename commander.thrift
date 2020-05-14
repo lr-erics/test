@@ -55,6 +55,10 @@ struct FundAccountInfo {
 4: AccountType type    
 }
 
+struct StrategyHolding {
+1: map<string, list<FundAccountInfo>> details; 
+}
+
 struct CommanderReq{
 1: string uuid
 2: string sender_ip

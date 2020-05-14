@@ -1,10 +1,21 @@
-include "predictor.thrift"
-
 namespace cpp2 hqth.trader
 namespace py hqth.trader
 namespace csharp hqth.trader
 
 cpp_include "<unordered_map>"
+
+struct Item {
+1: string stock_id  //加密股票id
+2: i32 rank         //预测排序
+}
+
+struct SortResult {
+1: list<Item> res
+}
+
+exception Exception {
+1: string message
+}
 
 enum StockType {
 NORMAL = 1,
@@ -42,14 +53,10 @@ struct FundAccountInfo {
 3: AccountType type    
 }
 
-exception Exception {
-1: string message
-}
-
 struct CommanderReq{
 1: string uuid
 2: string sender_ip
-3: map<string, predictor.SortResult> (cpp.template = "std::unordered_map") SortResults   //一个模型对应一个结果
+3: map<string, SortResult> (cpp.template = "std::unordered_map") SortResults   //一个模型对应一个结果
 }
 
 struct CommanderRsp{

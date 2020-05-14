@@ -30,6 +30,13 @@ struct PredictorRsp{
 4: map<string, SortResult> (cpp.template = "std::unordered_map") SortResults   //一个模型对应一个结果
 }
 
+struct CommanderReq{
+1: string uuid
+2: string sender_ip
+3: map<string, SortResult> (cpp.template = "std::unordered_map") SortResults   //一个模型对应一个结果
+}
+
+
 service PredictorService {
 oneway void predict(1: PredictorReq req)
 } 

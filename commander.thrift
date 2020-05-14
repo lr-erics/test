@@ -20,7 +20,7 @@ exception Exception {
 enum StockType {
 NORMAL = 1,
 ST = 2,        //special treatment
-To_DELIST = 3, //未来(N天内)即将退市股票
+TO_DELIST = 3, //未来(N天内)即将退市股票
 }
 
 enum AccountType {

@@ -2,7 +2,6 @@ namespace cpp2 hqth.trader
 namespace py hqth.trader
 namespace csharp hqth.trader
 
-
 include “predictor.thrift"
 
 cpp_include "<unordered_map>"

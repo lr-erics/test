@@ -44,7 +44,7 @@ struct HoldingItem {
 2: StockType type        
 3: double market_value   // 总市值
 4: i32 shares            // 总持仓量
-5. map<string, i32> hoding_details  // 策略id->持仓量
+5. map<string, i32> holding_details  // 策略id->持仓量
 }
 
 // 策略关联交易账户的持仓信息

@@ -20,8 +20,19 @@ exception Exception {
 
 enum StockType {
 NORMAL = 1,
-ST = 2,        //special treatment
-TO_DELIST = 3, //未来(N天内)即将退市股票
+ST = 2,           //special treatment
+TO_DELIST = 3,    //未来(N天内)即将退市股票
+LIMIT_UP = 4,    //涨停
+LIMIT_DOWN = 5,  // 跌停
+}
+
+struct stock {
+1: string stock_id
+2: StockType type
+}
+
+struct StockCandidates {
+1: list<stock> candidates
 }
 
 enum AccountType {

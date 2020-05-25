@@ -26,13 +26,13 @@ LIMIT_UP = 4,    //涨停
 LIMIT_DOWN = 5,  // 跌停
 }
 
-struct stock {
+struct Stock {
 1: string stock_id
 2: StockType type
 }
 
 struct StockCandidates {
-1: list<stock> candidates
+1: list<Stock> candidates
 }
 
 enum AccountType {

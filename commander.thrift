@@ -11,6 +11,7 @@ struct Item {
 
 struct SortResult {
 1: list<Item> res
+2: i32 holding_time
 }
 
 exception Exception {

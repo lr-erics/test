@@ -64,22 +64,6 @@ struct ExecuteResult {
 1: list<ExecuteItem> res
 }
 
-struct HoldingItem {
-1: string stock_id       //明文股票id
-3: double market_value   // 总市值
-4: i32 shares            // 总持仓量
-5: map<string, i32> (cpp.template = "std::unordered_map") holding_details  // 策略id->持仓量
-}
-
-// 策略关联交易账户的持仓信息
-struct FundAccountInfo {
-1: string account_id
-2: list<HoldingItem> items
-3: list<HoldingItem> expected_items
-4: double balance
-5: AccountType type    
-}
-
 struct CommanderReq{
 1: string uuid
 2: string sender_ip

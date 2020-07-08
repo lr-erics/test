@@ -37,7 +37,7 @@ LIMIT_DOWN = 5,  // 跌停
 
 struct Stock {
 1: string stock_id           //明文股票ID 
-2: StockType status          //股票状态
+2: StockStatus status          //股票状态
 3: StockSector sector        //股票所属板块    
 4: list<float> ten_market;   //十档行情, 买1-买10; 卖1-卖10
 }

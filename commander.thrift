@@ -19,33 +19,6 @@ exception Exception {
 1: string message
 }
 
-enum StockStatus {
-NORMAL = 1,
-ST = 2,           //special treatment
-TO_DELIST = 3,    //未来(N天内)即将退市股票
-LIMIT_UP = 4,    //涨停
-LIMIT_DOWN = 5,  // 跌停
-}
-
-// 股票板块                                                                                                                                 
- enum StockSector {                                                                                                                          
-   MAIN_BOARD = 1,            //主板                                                                                                         
-   SME_BOARD = 2,             //中小板块  Small and Medium Size Enterprise Stock Board                                                       
-   GEM_BOARD = 3,             //创业块    China Growth Enterprise Market                                                                     
-   SSE_STAR_MARKET_BOARD = 4, //科创板块  Science and Technology Innovation Board                                                            
- }
-
-struct Stock {
-1: string stock_id           //明文股票ID 
-2: StockStatus status          //股票状态
-3: StockSector sector        //股票所属板块    
-4: list<float> ten_market;   //十档行情, 买1-买10; 卖1-卖10
-}
-
-struct StockCandidates {
-1: list<Stock> candidates
-}
-
 struct ExecuteItem {
 1: string uuid         //执行计划唯一ID 
 2: string account_id   //交易账号id

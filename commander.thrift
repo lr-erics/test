@@ -80,10 +80,6 @@ struct FundAccountInfo {
 5: AccountType type    
 }
 
-struct StrategyObject {
-1: map<string, list<FundAccountInfo>> (cpp.template = "std::unordered_map") details; 
-}
-
 struct CommanderReq{
 1: string uuid
 2: string sender_ip

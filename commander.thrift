@@ -46,11 +46,6 @@ struct StockCandidates {
 1: list<Stock> candidates
 }
 
-enum AccountType {
-GENERAL_ACCOUNT = 1,
-CREDIT_ACCOUNT = 2,
-}
-
 struct ExecuteItem {
 1: string uuid         //执行计划唯一ID 
 2: string account_id   //交易账号id

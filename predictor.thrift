@@ -5,7 +5,7 @@ cpp_include "<unordered_map>"
 
  enum ReqType {
  NORMAL = 0,    //正常买卖请求
- SPSL   = 1,    //止盈止损例行请求 stop profile and stop loss
+ SPSL   = 1,    //止盈止损例行请求 stop profit and stop loss
  }
  
  struct PredictorReq {
